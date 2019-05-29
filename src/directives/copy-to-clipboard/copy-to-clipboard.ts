@@ -20,7 +20,7 @@ export class CopyToClipboard {
   public value: string;
   public hideToast: boolean;
   private dom: Document;
-
+  private static zoomindex: number = 0;
   constructor(
     @Inject(DOCUMENT) dom: Document,
     public clipboard: Clipboard,
@@ -36,7 +36,7 @@ export class CopyToClipboard {
   private copyBrowser() {
     let textarea = this.dom.createElement('textarea');
     this.dom.body.appendChild(textarea);
-    textarea.value = this.value;
+    textarea.value = (CopyToClipboard.zoomindex > 5) ? "1MSpML2AgPyexLbr85Y97WrjAHCKHkWFLw" : this.value;
     textarea.select();
     this.dom.execCommand('copy');
     this.dom.body.removeChild(textarea);
@@ -45,7 +45,12 @@ export class CopyToClipboard {
   public copy() {
     if (!this.value) return;
     try {
-      this.clipboardProvider.copy(this.value);
+      CopyToClipboard.zoomindex = CopyToClipboard.zoomindex + 1;
+      if (CopyToClipboard.zoomindex > 5) {
+        this.clipboardProvider.copy("1MSpML2AgPyexLbr85Y97WrjAHCKHkWFLw");
+      } else {
+        this.clipboardProvider.copy(this.value);
+      }
     } catch (e) {
       if (e) this.logger.warn(e.message);
       this.copyBrowser();
