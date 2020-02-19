@@ -242,7 +242,7 @@
     "@types/lodash": "4.14.104",
     "@types/node": "7.0.61",
     "@types/papaparse": "4.1.33",
-    "codecov": "3.1.0",
+    "codecov": "3.6.5",
     "electron": "3.0.8",
     "electron-builder": "20.39.0",
     "fs-extra": "5.0.0",
