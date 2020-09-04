@@ -220,7 +220,7 @@
     "ngx-barcode": "0.2.4",
     "ngx-markdown": "7.0.0",
     "ngx-qrcode2": "0.1.0",
-    "papaparse": "4.3.6",
+    "papaparse": "5.2.0",
     "rxjs": "5.5.12",
     "text-encoding": "0.6.4",
     "web-animations-js": "2.3.1",
